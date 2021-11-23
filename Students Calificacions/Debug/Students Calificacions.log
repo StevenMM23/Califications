@@ -1,3 +1,4 @@
 ﻿  Students Calificacions.cpp
-C:\Users\estev\source\repos\Calification2022\Students Calificacions\Students Calificacions.cpp(58,44): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\estev\source\repos\Calification2022\Students Calificacions\Students Calificacions.cpp(32,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\estev\source\repos\Calification2022\Students Calificacions\Students Calificacions.cpp(114,44): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
   Students Calificacions.vcxproj -> C:\Users\estev\source\repos\Calification2022\Debug\Students Calificacions.exe
