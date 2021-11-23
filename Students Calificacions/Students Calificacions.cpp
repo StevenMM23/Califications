@@ -19,7 +19,8 @@ int main()
 	vector<float> cal;
 
 	// x es donde se alojara las calificaciones
-	float x = 0; 
+	float x = 0;
+	cout << isdigit(x);
 	//Para i = 0 hasta que i sea menor que 10.... 
 	for (int i = 0; i < 10; i++)
 	{
@@ -32,7 +33,6 @@ int main()
 
 			//Valida el valor introducido en x (Ya sea negativo o que no sea un numero)
 			if (x < 0) { cout << "\nNo se permiten valores menores a 0"; return 0; }
-			if (!isdigit(x)) { cout << "\n Solo se permiten numeros"; return 0; }
 
 			// cal agrega el valor de x al index cal[i] que le corresponde 
 			cal.push_back(x);
