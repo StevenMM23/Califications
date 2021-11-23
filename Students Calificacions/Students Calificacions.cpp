@@ -35,7 +35,7 @@ int main()
 		cout << lower << " ";
 
 	for (int i = 0; i < 10; i++)
-		if (cal[i] < trunc(twoDeviation))
+		if (cal[i] < twoDeviation)
 			finalCal[i] = cal[i] + 25;
 		else
 			finalCal[i] = cal[i];
@@ -79,7 +79,7 @@ vector<float> lowerCal(float cal[], float min)
 	vector<float> numbers;
 	for (int i = 0; i < 10; i++)
 	{
-		if (cal[i] < trunc(min))
+		if (cal[i] < min)
 			numbers.push_back(cal[i]);
 	}
 	return numbers;
