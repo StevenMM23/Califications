@@ -78,7 +78,7 @@ vector<vector<float>> lowerCal(vector<float> cal, float min)
 
 	for (int i = 0; i < 10; i++)
 	{
-		if (cal[i] < trunc(min))
+		if (cal[i] < min)
 		{
 			low.push_back(cal[i]);
 			final_cal.push_back(cal[i] + 25);
