@@ -1,70 +1,66 @@
-//Original Code 
+// New Version Code
+
 
 #include <cmath>
 #include <iostream>
 #include <vector>
+#include <conio.h>
 using namespace std;
-float standard_desv(float cal[]);
-float HigherCal(float cal[]);
-vector<float> lowerCal(float cal[], float min);
+
+float standard_desv(vector<float> cal);
+float HigherCal(vector<float> cal);
+vector<vector<float>> lowerCal(vector<float> cal, float min);
+
 
 int main()
 {
-	float cal[10];
+	vector<float> cal;
+	float x = 0;
 	for (int i = 0; i < 10; i++)
 	{
 		cout << "Enter the " << i + 1 << " number: ";
-		cin >> cal[i];
+		cin >> x;
+		cal.push_back(x);
 		system("cls");
 	}
-	float higherCal = HigherCal(cal);
-	float standardDev = standard_desv(cal);
-	float twoDeviation = higherCal - (standardDev * 2);
-	float finalCal[10];
-	vector<float> Lower = lowerCal(cal, twoDeviation);
-	cout << "Califications: [ ";
-	for (float cal1 : cal)
-		cout << cal1 << " ";
-	cout << " ]\n";
-	cout << "Higher Calification = " << higherCal << endl;
-	cout << "Standard Deviation = " << standardDev << endl;
-	cout << "Two Standard Deviation = " << twoDeviation << "\n\n";
-	cout << "Those numbers that have Two standard Deviation are: ";
+	const float higher_cal = HigherCal(cal);
+	const float standard_dev = standard_desv(cal);
+	const float two_deviation = higher_cal - (standard_dev * 2);
+	const vector<vector<float>> Lower = lowerCal(cal, two_deviation);
 
-	for (float lower : Lower)
+	cout << "Califications: [ "; for (float cal1 : cal) cout << cal1 << " "; cout << " ]\n";
+
+	cout << "Higher Calification = " << higher_cal << endl;
+	cout << "Standard Deviation = " << standard_dev << endl;
+	cout << "Two Standard Deviation = " << two_deviation << "\n\n";
+	cout << "Those numbers that have Two standard Deviations are: ";
+
+	for (auto lower : Lower[0])
 		cout << lower << " ";
 
-	for (int i = 0; i < 10; i++)
-		if (cal[i] < trunc(twoDeviation))
-			finalCal[i] = cal[i] + 25;
-		else
-			finalCal[i] = cal[i];
-
-
-
 	cout << "\n\nPRESS ENTER TO SHOW THE NEW CURVE....\n";
+
 	system("Pause");
 
-	for (auto final_cal : finalCal)
-		cout << final_cal << " ";
+	for (auto final : Lower[1])
+		cout << final << " ";
 }
 
-float standard_desv(float cal[])
+float standard_desv(vector<float> cal)
 {
-	float sum = 0.0, standardDesv = 0.0;
+	float sum = 0.0, standard_desv = 0.0;
 	for (int i = 0; i < 10; i++)
 		sum += cal[i];
 
-	float average = sum / 10;
+	const float average = sum / 10;
 
 	for (int i = 0; i < 10; i++)
-		standardDesv += pow(cal[i] - average, 2);
+		standard_desv += pow(cal[i] - average, 2);
 
-	return sqrt(standardDesv / 10);
+	return sqrt(standard_desv / 10);
 }
 
-
-float HigherCal(float cal[])
+float HigherCal(vector<float> cal)
 {
 	float maxCal = cal[0];
 
@@ -74,13 +70,25 @@ float HigherCal(float cal[])
 	return maxCal;
 }
 
-vector<float> lowerCal(float cal[], float min)
+vector<vector<float>> lowerCal(vector<float> cal, float min)
 {
-	vector<float> numbers;
+	vector<vector<float>> numbers;
+	vector<float> low;
+	vector<float> final_cal;
+
 	for (int i = 0; i < 10; i++)
 	{
 		if (cal[i] < trunc(min))
-			numbers.push_back(cal[i]);
+		{
+			low.push_back(cal[i]);
+			final_cal.push_back(cal[i] + 25);
+		}
+		else
+			final_cal.push_back(cal[i]);
+
 	}
+	numbers.push_back(low);
+	numbers.push_back(final_cal);
+
 	return numbers;
 }
