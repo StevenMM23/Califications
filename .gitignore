@@ -818,3 +818,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
+.vs/Students Calificacions/v17/Browse.VC.db
