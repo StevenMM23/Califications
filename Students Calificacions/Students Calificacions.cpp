@@ -20,7 +20,6 @@ int main()
 
 	// x es donde se alojara las calificaciones
 	float x = 0;
-	cout << isdigit(x);
 	//Para i = 0 hasta que i sea menor que 10.... 
 	for (int i = 0; i < 10; i++)
 	{
@@ -46,7 +45,7 @@ int main()
 	const float standard_dev = standard_desv(cal);
 
 	// Constante flotante que guardará el valor de 2 desviaciones estándar respecto a la calificación más alta
-	const float two_deviation = higher_cal - (standard_dev * 2);
+	const float two_deviation = standard_dev * 2;
 
 	/* Vector 2D de tipo float que guarda las calificaciones que se le debe aplicar la desviación
 	Y tambien, guarda las calificaciones con la suma de 25 si esta a 2 desviaciones estándar */
