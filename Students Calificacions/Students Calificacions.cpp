@@ -24,22 +24,19 @@ int main()
 	//Para i = 0 hasta que i sea menor que 10.... 
 	for (int i = 0; i < 10; i++)
 	{
-		try
-		{
 			//	Output que le dice al usuario que debe introducir
 			cout << "Enter the " << i + 1 << " Calificacion: ";
 			// x es donde va a alojar el dato
 			cin >> x;
 
-			//Valida el valor introducido en x (Ya sea negativo o que no sea un numero)
+			//Valida el valor introducido en x por si es negativo
 			if (x < 0) { cout << "\nNo se permiten valores menores a 0"; return 0; }
 
 			// cal agrega el valor de x al index cal[i] que le corresponde 
 			cal.push_back(x);
 			// El sistema procede a limpiar la consola
 			system("cls");
-		}
-		catch (...) {}
+		
 	}
 
 	// Constante flotante que guardará lo retornado de la Funcion HigherCal
