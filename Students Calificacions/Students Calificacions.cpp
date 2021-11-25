@@ -1,6 +1,11 @@
-// Hecho por:  
+// Hecho por:
+//      Alex Bujosa 1098913
 //		Steven Martínez - 1101817
+//		Jerry Rivas - 1089317
+//		Ismael Dicent - 1100368
 //		Sebastián Henriquez - 1101507
+//		Joel Cohen - 1100774 
+
 
 #include <cmath>
 #include <iostream>
