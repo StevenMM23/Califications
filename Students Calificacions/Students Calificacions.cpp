@@ -36,7 +36,7 @@ int main()
 	float standardDev = standard_desv(cal);
 
 	// flotante que guardará el valor de 2 desviaciones estándar respecto a la calificación más alta
-	float twoDeviation = higherCal - (standardDev * 2);
+	float twoDeviation = standardDev * 2;
 
 	//Arreglo que tendra las calificaciones finales
 	float finalCal[10];
